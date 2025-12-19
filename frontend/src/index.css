@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clean Professional Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* =====================================================
+   ROYAL INDIGO THEME (WHITE + DEEP INDIGO + VIOLET)
+===================================================== */
+:root {
+  /* Base Colors - LIGHT MODE */
+  --bg-main: #f8fafc;
+  --bg-secondary: #ffffff;
+  --text-main: #1e1b4b; /* Deep Indigo (almost black) */
+  --text-muted: #64748b; /* Slate 500 */
+
+  /* Primary Colors (Indigo/Violet Theme) */
+  /* Keeping variable names same as original for compatibility */
+  --primary-green: #6366f1; /* Indigo-500 (Primary Brand Color) */
+  --primary-blue: #8b5cf6;  /* Violet-500 */
+  --primary-teal: #d946ef;  /* Fuchsia-500 (Accent) */
+
+  /* AQI Colors (Standard) */
+  --aqi-good: #16a34a;
+  --aqi-moderate: #facc15;
+  --aqi-unhealthy: #f97316;
+  --aqi-hazardous: #dc2626;
+
+  /* Borders & Glass */
+  --border-light: rgba(99, 102, 241, 0.15); /* Slight Indigo tint */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+
+  /* Shadows */
+  --shadow-soft: 0 10px 25px rgba(99, 102, 241, 0.08);
+  --shadow-hover: 0 15px 35px rgba(99, 102, 241, 0.12);
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  /* Subtle gradient from Slate to faint Indigo */
+  background: linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #eef2ff 100%
+  );
+  min-height: 100vh;
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   CONTAINERS
+===================================================== */
+.glass-cosmic {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* =====================================================
+   PANEL – CLEAN ROYAL INDIGO CARD (NO GLASS)
+===================================================== */
+
+.glass-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow:
+    0 8px 20px rgba(99, 102, 241, 0.08),
+    0 2px 6px rgba(99, 102, 241, 0.05);
+}
+
+
+/* =====================================================
+   HOVER EFFECTS
+===================================================== */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #312e81; /* Indigo-900 for headings */
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* =====================================================
+   STATUS COLORS (AQI)
+===================================================== */
+.aqi-good { color: var(--aqi-good); }
+.aqi-moderate { color: var(--aqi-moderate); }
+.aqi-unhealthy { color: var(--aqi-unhealthy); }
+.aqi-hazardous { color: var(--aqi-hazardous); }
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+.btn-primary {
+  /* Gradient: Indigo to Violet */
+  background: linear-gradient(
+    135deg,
+    var(--primary-green),
+    var(--primary-blue)
+  );
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+}
+
+.btn-primary:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef2ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--primary-green),
+    var(--primary-blue)
+  );
+  border-radius: 4px;
+}
+
+/* =====================================================
+   LOADING
+===================================================== */
+.skeleton-cosmic {
+  background: linear-gradient(
+    90deg,
+    #e0e7ff,
+    #f8fafc,
+    #e0e7ff
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* =====================================================
+   CHARTS
+===================================================== */
+.chart-glow {
+  /* Shadow matching the Indigo primary color */
+  filter: drop-shadow(0 4px 8px rgba(99, 102, 241, 0.25));
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+*:focus-visible {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 3px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+@media (max-width: 768px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+}
+
+
+.nav-link {
+  @apply text-gray-700 hover:text-green-600 text-sm font-medium transition;
+}

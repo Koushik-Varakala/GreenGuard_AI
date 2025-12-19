@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GreenGuard AI
 
 An AI-powered environmental monitoring and pollution prevention system that provides real-time air quality monitoring, 7-day pollution prediction, personalized health recommendations, travel exposure analysis, and child-safety features.
@@ -425,3 +426,6 @@ For demo purposes, the app works with mock data if API keys are not provided.
 
 **Built with ❤️ for environmental awareness**
 
+=======
+# GreenGuard_AI
+>>>>>>> 5dfb5d54ea8c9783382aaa1a25894f2fc13edf8e
